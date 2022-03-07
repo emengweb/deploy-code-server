@@ -42,6 +42,7 @@ RUN sudo apt-get install -y inetutils-ping sudo openssl net-tools openvpn jq git
 RUN sudo npm install -g npm
 RUN sudo npm i -g nodemon
 RUN sudo npm i -g apostrophe-cli
+RUN sudo npm install -g @apostrophecms/cli
 RUN sudo apt clean
 RUN sudo rm -rf /var/lib/apt/lists/* 
 
