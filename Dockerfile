@@ -32,10 +32,10 @@ RUN sudo chown -R coder:coder /home/coder/.local
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
 
-RUN sudo apt-get install -y curl locales gnupg2 tzdata && locale-gen en_US.UTF-8 && \
-    curl -sL https://deb.nodesource.com/setup_current.x | bash - && \
-    apt-get upgrade -y && \
-    apt-get install -y  \
+RUN sudo apt-get install -y curl locales gnupg2 tzdata && sudo locale-gen en_US.UTF-8 && \
+    sudo curl -sL https://deb.nodesource.com/setup_current.x | bash - && \
+    sudo apt-get upgrade -y && \
+    sudo apt-get install -y  \
       inetutils-ping \
       sudo \
       openssl \
@@ -57,19 +57,19 @@ RUN sudo apt-get install -y curl locales gnupg2 tzdata && locale-gen en_US.UTF-8
       bash-completion \
       openssh-client \
       default-jdk && \
-    npm install -g npm && \
-    npm i -g nodemon && \
-    npm i -g apostrophe-cli && \
-    apt clean && \
-    rm -rf /var/lib/apt/lists/* 
+    sudo npm install -g npm && \
+    sudo npm i -g nodemon && \
+    sudo npm i -g apostrophe-cli && \
+    sudo apt clean && \
+    sudo rm -rf /var/lib/apt/lists/* 
 
-RUN locale-gen en_US.UTF-8 && \
-    cd /tmp && \
+RUN sudo locale-gen en_US.UTF-8 && \
+    sudo cd /tmp && \
     
 ENV LC_ALL=en_US.UTF-8
 
-RUN mkdir -p projects && mkdir -p certs && \
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.3/install.sh | bash && \
+RUN sudo mkdir -p project && \
+    sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.3/install.sh | bash && \
     
 RUN sudo apt-get install -y ubuntu-make
 
