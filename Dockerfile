@@ -53,10 +53,10 @@ ENV LC_ALL=en_US.UTF-8
 #RUN sudo mkdir -p project 
 #RUN sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.3/install.sh | bash
 
-RUN code-server --install-extension ms-azuretools.vscode-cosmosdb
-RUN code-server --install-extension punkave.apostrophecms-vs-snippets
-RUN code-server --install-extension tabnine.tabnine-vscode
-RUN code-server --install-extension GitHub.copilot
+#RUN code-server --install-extension ms-azuretools.vscode-cosmosdb
+#RUN code-server --install-extension punkave.apostrophecms-vs-snippets
+#RUN code-server --install-extension tabnine.tabnine-vscode
+#RUN code-server --install-extension GitHub.copilot
 
 # -----------
 
