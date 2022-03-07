@@ -52,8 +52,6 @@ ENV LC_ALL=en_US.UTF-8
 
 RUN sudo mkdir -p project 
 RUN sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.3/install.sh | bash
-    
-RUN sudo apt-get install -y ubuntu-make
 
 RUN code-server --install-extension ms-azuretools.vscode-cosmosdb
 RUN code-server --install-extension punkave.apostrophecms-vs-snippets
