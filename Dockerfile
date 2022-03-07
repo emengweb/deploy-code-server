@@ -34,9 +34,10 @@ RUN sudo chown -R coder:coder /home/coder/.local
 
 RUN sudo apt-get install -y curl locales gnupg2 tzdata 
 RUN sudo locale-gen en_US.UTF-8
-RUN sudo curl -sL https://deb.nodesource.com/setup_current.x | bash -
+#RUN sudo curl -sL https://deb.nodesource.com/setup_current.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 #RUN sudo apt-get upgrade -y
-RUN sudo apt-get install -y apt-utils inetutils-ping sudo openssl net-tools openvpn jq git tree locales curl dumb-init wget httpie nodejs python python3-pip joe ansible bash-completion openssh-client default-jdk && \
+RUN sudo apt-get install -y apt-utils inetutils-ping sudo openssl net-tools openvpn jq git tree locales curl dumb-init wget httpie nodejs python python3-pip joe ansible bash-completion openssh-client default-jdk
 RUN sudo npm install -g npm
 RUN sudo npm i -g nodemon
 RUN sudo npm i -g apostrophe-cli
