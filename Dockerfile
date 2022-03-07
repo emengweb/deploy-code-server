@@ -41,7 +41,7 @@ RUN sudo apt-get install -y apt-utils
 RUN sudo apt-get install -y inetutils-ping sudo openssl net-tools openvpn jq git tree locales curl dumb-init wget httpie nodejs python python3-pip joe ansible bash-completion openssh-client default-jdk
 RUN sudo npm install -g npm
 RUN sudo npm i -g nodemon
-RUN sudo npm i -g apostrophe-cli
+#RUN sudo npm i -g apostrophe-cli # old version
 RUN sudo npm install -g @apostrophecms/cli
 RUN sudo apt clean
 RUN sudo rm -rf /var/lib/apt/lists/* 
@@ -50,8 +50,8 @@ RUN sudo locale-gen en_US.UTF-8
     
 ENV LC_ALL=en_US.UTF-8
 
-RUN sudo mkdir -p project 
-RUN sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.3/install.sh | bash
+#RUN sudo mkdir -p project 
+#RUN sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.3/install.sh | bash
 
 RUN code-server --install-extension ms-azuretools.vscode-cosmosdb
 RUN code-server --install-extension punkave.apostrophecms-vs-snippets
