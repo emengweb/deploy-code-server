@@ -32,44 +32,23 @@ RUN sudo chown -R coder:coder /home/coder/.local
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
 
-RUN sudo apt-get install -y curl locales gnupg2 tzdata && sudo locale-gen en_US.UTF-8 && \
-    sudo curl -sL https://deb.nodesource.com/setup_current.x | bash - && \
-    sudo apt-get upgrade -y && \
-    sudo apt-get install -y  \
-      inetutils-ping \
-      sudo \
-      openssl \
-      net-tools \
-      openvpn \
-      jq \
-      git \
-      tree \
-      locales \ 
-      curl \
-      dumb-init \
-      wget \
-      httpie \
-      nodejs \
-      python \
-      python3-pip \
-      joe \
-      ansible \
-      bash-completion \
-      openssh-client \
-      default-jdk && \
-    sudo npm install -g npm && \
-    sudo npm i -g nodemon && \
-    sudo npm i -g apostrophe-cli && \
-    sudo apt clean && \
-    sudo rm -rf /var/lib/apt/lists/* 
+RUN sudo apt-get install -y curl locales gnupg2 tzdata 
+RUN sudo locale-gen en_US.UTF-8
+RUN sudo curl -sL https://deb.nodesource.com/setup_current.x | bash -
+#RUN sudo apt-get upgrade -y
+RUN sudo apt-get install -y inetutils-ping sudo openssl net-tools openvpn jq git tree locales curl dumb-init wget httpie nodejs python python3-pip joe ansible bash-completion openssh-client default-jdk && \
+RUN sudo npm install -g npm
+RUN sudo npm i -g nodemon
+RUN sudo npm i -g apostrophe-cli
+RUN sudo apt clean
+RUN sudo rm -rf /var/lib/apt/lists/* 
 
-RUN sudo locale-gen en_US.UTF-8 && \
-    sudo cd /tmp && \
+RUN sudo locale-gen en_US.UTF-8 
     
 ENV LC_ALL=en_US.UTF-8
 
-RUN sudo mkdir -p project && \
-    sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.3/install.sh | bash && \
+RUN sudo mkdir -p project 
+RUN sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.3/install.sh | bash
     
 RUN sudo apt-get install -y ubuntu-make
 
