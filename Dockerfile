@@ -32,10 +32,7 @@ RUN sudo chown -R coder:coder /home/coder/.local
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
 
-RUN . /etc/lsb-release && \
-    apt-get update && \
-    export DEBIAN_FRONTEND=noninteractive && ln -fs /usr/share/zoneinfo/${TZ} /etc/localtime && \
-    apt-get install -y curl locales gnupg2 tzdata && locale-gen en_US.UTF-8 && \
+RUN sudo apt-get install -y curl locales gnupg2 tzdata && locale-gen en_US.UTF-8 && \
     curl -sL https://deb.nodesource.com/setup_current.x | bash - && \
     apt-get upgrade -y && \
     apt-get install -y  \
