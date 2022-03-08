@@ -34,9 +34,7 @@ RUN sudo chown -R coder:coder /home/coder/.local
 
 RUN sudo apt-get install -y curl locales gnupg2 tzdata 
 RUN sudo locale-gen en_US.UTF-8
-#RUN sudo curl -sL https://deb.nodesource.com/setup_current.x | bash -
-RUN curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-#RUN sudo apt-get upgrade -y
+RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 RUN sudo apt-get install -y apt-utils
 RUN sudo apt-get install -y inetutils-ping sudo openssl net-tools openvpn jq git tree locales curl dumb-init wget httpie nodejs python python3-pip joe ansible bash-completion openssh-client default-jdk
 RUN sudo npm install -g npm
@@ -50,13 +48,33 @@ RUN sudo locale-gen en_US.UTF-8
     
 ENV LC_ALL=en_US.UTF-8
 
-#RUN sudo mkdir -p project 
-#RUN sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.3/install.sh | bash
+RUN \
+  ##### 安装NVM
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash \
+  && export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" \
+  #command -v nvm && source ~/.bashrc \
+  ##### 安装nodejs
+  && nvm install 8.11.2 \
+  && nvm install 14.16.1 \
+  && nvm install 12.20.0 \
+  && nvm use 12.20.0 \
+  ##### 安装PM2
+  && npm install -g pm2
 
 #RUN code-server --install-extension ms-azuretools.vscode-cosmosdb
 #RUN code-server --install-extension punkave.apostrophecms-vs-snippets
-#RUN code-server --install-extension tabnine.tabnine-vscode
 #RUN code-server --install-extension GitHub.copilot
+RUN code-server --install-extension ms-azuretools.vscode-docker
+RUN code-server --install-extension ms-python.python
+RUN code-server --install-extension ms-toolsai.jupyter
+RUN code-server --install-extension codestream.codestream
+RUN code-server --install-extension ms-ceintl.vscode-language-pack-zh-hans
+#RUN code-server --install-extension shan.code-settings-sync
+RUN code-server --install-extension alexcvzz.vscode-sqlite
+RUN code-server --install-extension bajdzis.vscode-database
+RUN code-server --install-extension mongodb.mongodb-vscode
+RUN code-server --install-extension apollographql.apollo-midnight-color-theme
+RUN code-server --install-extension tabnine.tabnine-vscode
 
 # -----------
 
