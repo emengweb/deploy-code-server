@@ -74,7 +74,7 @@ RUN code-server --install-extension alexcvzz.vscode-sqlite
 RUN code-server --install-extension bajdzis.vscode-database
 RUN code-server --install-extension mongodb.mongodb-vscode
 RUN code-server --install-extension apollographql.apollo-midnight-color-theme
-RUN code-server --install-extension tabnine.tabnine-vscode
+#RUN code-server --install-extension tabnine.tabnine-vscode
 
 # -----------
 
