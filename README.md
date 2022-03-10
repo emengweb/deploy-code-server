@@ -32,3 +32,5 @@ A collection of one-click buttons and scripts for deploying [code-server](https:
 ## Build Image
 
 docker build -t emengweb/code-server:latest .
+docker login
+docker push emengweb/code-server:latest
