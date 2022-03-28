@@ -29,9 +29,11 @@ A collection of one-click buttons and scripts for deploying [code-server](https:
   - Storage may not be persistent. You may have to use [rclone](https://rclone.org/) to store your filesystem on a cloud service. Documented below:
   - [📄 Docs for code-server-deploy-container](deploy-container/)
 
-## Build Image
+- Add YAO v0.9.1
+
+## Build & Push Docker Image
 ```
-docker build -t emengweb/code-server:latest .
 docker login
+docker build -t emengweb/code-server:latest .
 docker push emengweb/code-server:latest
 ```
