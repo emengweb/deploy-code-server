@@ -78,6 +78,9 @@ RUN code-server --install-extension apollographql.apollo-midnight-color-theme
 
 # -----------
 
+# Yao install
+RUN sudo curl -fsSL https://website.yaoapps.com/install.sh | bash
+
 # Port
 ENV PORT=8080
 
