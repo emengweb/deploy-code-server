@@ -30,6 +30,7 @@ A collection of one-click buttons and scripts for deploying [code-server](https:
   - [📄 Docs for code-server-deploy-container](deploy-container/)
 
 - Add YAO v0.9.1
+- Add Gatsby
 
 ## Build & Push Docker Image
 ```
