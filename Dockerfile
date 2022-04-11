@@ -41,6 +41,8 @@ RUN sudo npm install -g npm
 RUN sudo npm i -g nodemon
 #RUN sudo npm i -g apostrophe-cli # old version
 RUN sudo npm install -g @apostrophecms/cli
+##### 安装Gatsby
+RUN sudo npm install -g gatsby-cli
 RUN sudo apt clean
 RUN sudo rm -rf /var/lib/apt/lists/* 
 
@@ -84,6 +86,8 @@ RUN code-server --install-extension apollographql.apollo-midnight-color-theme
 RUN curl -fsSL https://github.com/YaoApp/yao/releases/download/v0.9.1/yao-0.9.1-linux-amd64 --output /home/coder/yao-0.9.1
 RUN sudo mv /home/coder/yao-0.9.1 /usr/local/bin/yao
 RUN sudo chmod +x /usr/local/bin/yao
+
+
 
 # Port
 ENV PORT=8080
