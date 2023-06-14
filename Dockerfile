@@ -80,13 +80,6 @@ RUN code-server --install-extension apollographql.apollo-midnight-color-theme
 
 # -----------
 
-# Yao install
-# CDN not reachable
-#RUN sudo curl -fsSL https://website.yaoapps.com/install.sh | bash
-RUN curl -fsSL https://github.com/YaoApp/yao/releases/download/v0.9.1/yao-0.9.1-linux-amd64 --output /home/coder/yao-0.9.1
-RUN sudo mv /home/coder/yao-0.9.1 /usr/local/bin/yao
-RUN sudo chmod +x /usr/local/bin/yao
-
 
 
 # Port
