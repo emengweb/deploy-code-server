@@ -37,7 +37,8 @@ RUN sudo locale-gen en_US.UTF-8
 RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 RUN sudo apt-get install -y apt-utils
 RUN sudo apt-get install -y inetutils-ping sudo openssl net-tools openvpn jq git tree locales curl dumb-init wget httpie nodejs python python3-pip joe ansible bash-completion openssh-client default-jdk
-RUN sudo npm install -g npm
+#RUN sudo npm cache clean --force
+RUN sudo npm install -g npm@8.3.0
 RUN sudo npm i -g nodemon
 #RUN sudo npm i -g apostrophe-cli # old version
 RUN sudo npm install -g @apostrophecms/cli
@@ -77,8 +78,20 @@ RUN code-server --install-extension bajdzis.vscode-database
 RUN code-server --install-extension mongodb.mongodb-vscode
 RUN code-server --install-extension apollographql.apollo-midnight-color-theme
 #RUN code-server --install-extension tabnine.tabnine-vscode
-
+RUN code-server --install-extension Codeium.codeium
+RUN code-server --install-extension Codium.codium
+RUN code-server --install-extension timkmecl.chatgpt
+RUN code-server --install-extension genieai.chatgpt-vscode
+RUN code-server --install-extension rubberduck.rubberduck-vscode
+RUN code-server --install-extension uni-helper.uni-highlight-vscode
+RUN code-server --install-extension uni-helper.uni-ui-snippets-vscode
+RUN code-server --install-extension uni-helper.uni-cloud-snippets-vscode
+RUN code-server --install-extension uni-helper.uni-helper-vscode
+RUN code-server --install-extension uni-helper.uni-app-snippets-vscode
+RUN code-server --install-extension uni-helper.uni-app-schemas-vscode
+RUN code-server --install-extension assisrMatheus.sidebar-markdown-notes
 # -----------
+
 
 
 
